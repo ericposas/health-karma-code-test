@@ -40,6 +40,13 @@ const handleSubmit = (e) => {
 </template>
 
 <style scoped>
+.fa,
+.fa-solid {
+  color: #0d8fb3;
+}
+.fa-magnifying-glass {
+  color: #fff;
+}
 .searchbar-component {
   overflow: hidden;
   line-height: 40px;

@@ -74,24 +74,47 @@ const getType = (icon) =>
         <span>{{ phone }}</span>
       </button>
       <div class="see-website-save-combo">
-        <a>See website</a>&nbsp;|&nbsp;<i class="fa-regular fa-heart"></i> Save
+        <a href="">See website</a>&nbsp;|&nbsp;<i
+          class="fa-regular fa-heart"
+        ></i>
+        Save
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.fa-star {
+  color: #0d8fb3;
+}
+.fa-dollar-sign,
+.fa-solid.fa-location-dot {
+  color: #eb9609;
+}
+.fa-heart {
+  color: #d4152c;
+}
 .restaurant-listing {
   height: 180px;
-  padding: 8px;
+  padding: 12px;
   border-radius: 4px;
   margin-bottom: 8px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
 }
+
 .restaurant-details > .restaurant-name {
+  color: #5c5c5c;
   font-size: 1.25rem;
   font-weight: bold;
+}
+.restaurant-details > .restaurant-type {
+  color: #8b572a;
+  font-weight: bold;
+}
+.star-rating {
+  color: #0d8fb3;
+  font-size: 0.8rem;
 }
 .reservations {
   text-align: center;
@@ -108,7 +131,9 @@ button.phone-number {
   border-radius: 2px;
   background-color: #0d8fb3;
 }
-.see-website-save-combo {
+.see-website-save-combo,
+.see-website-save-combo > a {
   margin-top: 14px;
+  color: #7e7f7e;
 }
 </style>
