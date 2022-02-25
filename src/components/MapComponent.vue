@@ -23,7 +23,7 @@ onMounted(async () => {
 #map {
   height: 100%;
   min-height: 400px;
-  max-height: 630px;
+  max-height: 745px;
 }
 html,
 body {

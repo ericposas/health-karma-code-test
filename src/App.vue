@@ -6,9 +6,11 @@ import Filters from "@/components/Filters.vue";
 import RestaurantListing from "@/components/RestaurantListing.vue";
 import MapComponent from "@/components/MapComponent.vue";
 import useMapMethods from "./extractedMethods/useMapMethods.js";
-import { onMounted, ref } from "@vue/runtime-core";
+import { ref } from "@vue/runtime-core";
+import Paginate from "vuejs-paginate-next";
 
-const mountCount = ref(0);
+const perPage = ref(4);
+const currentPage = ref(1);
 const restaurants = ref([
   {
     icon: "",
@@ -23,18 +25,24 @@ const restaurants = ref([
 
 const { loadMapFromZipCode } = useMapMethods();
 
-onMounted(() => {
-  mountCount.value++;
-  console.log(`component has mounted ${mountCount.value} times.`);
-});
-
 const onRestaurantsLoaded = (loadedRestaurants) =>
   (restaurants.value = loadedRestaurants);
 
 const onZipCodeSubmit = (zip) =>
   loadMapFromZipCode(zip, (results) => {
     onRestaurantsLoaded(results);
+    currentPage.value = 1;
   });
+
+const itemsForList = () => {
+  const slice = restaurants.value.slice(
+    (currentPage.value - 1) * perPage.value,
+    currentPage.value * perPage.value
+  );
+  console.log("currentPage", currentPage.value, restaurants.value);
+  console.log(slice);
+  return slice;
+};
 </script>
 
 <template>
@@ -48,11 +56,11 @@ const onZipCodeSubmit = (zip) =>
     <div class="listings-and-locations-container row">
       <div class="listings col-xl-6 col-lg-7 col-md-12">
         <restaurant-listing
-          v-for="(restaurant, idx) in restaurants"
+          v-for="(restaurant, idx) in itemsForList()"
           :key="idx"
           :icon="restaurant.icon"
           :name="restaurant.name"
-          :type="food"
+          :type="restaurant.type"
           :address="restaurant.vicinity"
           :cost="restaurant.price_level"
           :rating="restaurant.rating"
@@ -63,6 +71,17 @@ const onZipCodeSubmit = (zip) =>
         <map-component @restaurants="onRestaurantsLoaded"></map-component>
       </div>
     </div>
+    <div class="row">
+      <paginate
+        v-model="currentPage"
+        style="cursor: pointer"
+        :page-count="restaurants.length / 4"
+        :prev-text="'Prev'"
+        :next-text="'Next'"
+        :container-class="'pagination'"
+      >
+      </paginate>
+    </div>
   </div>
 </template>
 
@@ -72,5 +91,8 @@ const onZipCodeSubmit = (zip) =>
 }
 .listings-and-locations-container {
   margin-top: 25px;
+}
+.pagination {
+  list-style-type: none;
 }
 </style>
