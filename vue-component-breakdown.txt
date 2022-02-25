@@ -1,0 +1,59 @@
+- Page component
+	[Row]
+	- Header / Nav component
+		[Columns]
+		- Logo / Home link [align left]
+		- "My Dashboard" [align right]
+		- "Search" [align right]
+		- Notifications icon [align right]
+		- Profile icon (with dummy dropdown arrow) [align right]
+
+	[Row]	
+	- Promo strip ("Enjoy our discounts! Create an account <a>here</a>")
+	- "X" close button [align right]
+
+	[50px margin]
+
+	[Row]
+	- Restaurant search box component
+		[Columns]
+		- "Restaurant name" (dummy)
+		- "Zip code" (needs to be working)
+		- "Cuisine type" (dummy)
+		- "Dietary" (dummy)
+		- "Search" button (to trigger search action)
+	
+	[Row]
+	- Series of 3 dropdown components (dummy filters)
+		[columns]
+		- Rating
+		- Price
+		- Distance
+
+	[Row]
+		[Column left]
+		[Rows * n <RestaurantListing /> Component]
+		- <RestaurantListing /> component
+			[Columns]
+			- Logo
+			- Restaurant details
+				[rows]
+				- Name
+				- Subtitle "Restaurant type"
+				- pin icon | distance | address
+				- dollar signs cost indicator
+			- 1/5-star rating 
+			- Reservation info
+				[rows]
+				- "Make a Reservation"
+				- button with phone icon and phone number
+				- <a>See website</a> | heart icon "Save"
+		[Column right]
+		- Google map w/pins dropped at search result locations
+			(listings currently displayed by paginated results should be
+			highlighted in red)
+
+	[20px margin]
+
+	[Row]
+	- Pagination [First, Prev, 1, 2, ..., Next, Last]
