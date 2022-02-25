@@ -14,7 +14,7 @@ defineProps({
     type: String, // google result param: "vicinity"
   },
   cost: {
-    type: String, // google result param: "price_level"
+    type: Number, // google result param: "price_level"
   },
   rating: {
     type: Number,
