@@ -29,13 +29,15 @@ const getType = (icon) =>
   icon.indexOf("cafe") > -1
     ? "Cafe"
     : icon.indexOf("generic") > -1
-    ? "Business"
+    ? "Business / Delivery"
     : icon.indexOf("movie") > -1
     ? "Movies"
     : icon.indexOf("bar") > -1
     ? "Bar"
     : icon.indexOf("lodging") > -1
     ? "Hotel / Lodging"
+    : icon.indexOf("shopping") > -1
+    ? "Shopping"
     : "Restaurant";
 </script>
 
