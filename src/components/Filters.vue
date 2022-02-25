@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+
 const options = ref([
   {
     name: "Rating",
@@ -25,11 +26,7 @@ const options = ref([
 </template>
 
 <style scoped>
-.col-1 {
-  /* margin-right: 16px; */
-}
 select {
-  /* width: 120px; */
   padding: 4px 8px;
   border-radius: 4px;
   background-color: #fff;

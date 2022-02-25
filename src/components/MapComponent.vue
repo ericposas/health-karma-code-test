@@ -8,7 +8,6 @@ const { loadMapFromZipCode } = useMapMethods();
 
 onMounted(async () => {
   loadMapFromZipCode(33308, (results) => {
-    console.log(results);
     emit("restaurants", results);
   });
 });

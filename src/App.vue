@@ -6,8 +6,8 @@ import Filters from "@/components/Filters.vue";
 import RestaurantListing from "@/components/RestaurantListing.vue";
 import MapComponent from "@/components/MapComponent.vue";
 import useMapMethods from "./extractedMethods/useMapMethods.js";
-import { ref } from "@vue/runtime-core";
 import Paginate from "vuejs-paginate-next";
+import { ref } from "@vue/runtime-core";
 
 const perPage = ref(4);
 const currentPage = ref(1);
@@ -39,8 +39,6 @@ const itemsForList = () => {
     (currentPage.value - 1) * perPage.value,
     currentPage.value * perPage.value
   );
-  console.log("currentPage", currentPage.value, restaurants.value);
-  console.log(slice);
   return slice;
 };
 </script>

@@ -102,7 +102,6 @@ const getType = (icon) =>
   background-color: #fff;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
 }
-
 .restaurant-details > .restaurant-name {
   color: #5c5c5c;
   font-size: 1.25rem;
