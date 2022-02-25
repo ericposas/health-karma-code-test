@@ -52,7 +52,12 @@ const itemsForList = () => {
   <promo-strip />
   <div class="app-main container">
     <search-bar @zipcode="onZipCodeSubmit" />
-    <filters />
+    <div class="row filters-row">
+      <filters />
+      <div class="col-lg-9 col-md-6 col-sm-6 results-loaded-text">
+        {{ restaurants.length }} results loaded
+      </div>
+    </div>
     <div class="listings-and-locations-container row">
       <div class="listings col-xl-6 col-lg-7 col-md-12">
         <restaurant-listing
@@ -88,6 +93,12 @@ const itemsForList = () => {
 <style scoped>
 .app-main {
   margin-top: 60px;
+}
+.filters-row {
+  margin-top: 8px;
+}
+.results-loaded-text {
+  text-align: right;
 }
 .listings-and-locations-container {
   margin-top: 25px;

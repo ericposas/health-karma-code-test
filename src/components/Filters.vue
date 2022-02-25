@@ -14,22 +14,22 @@ const options = ref([
 </script>
 
 <template>
-  <div class="row">
-    <select disabled class="col-1" v-for="(option, idx) in options" :key="idx">
-      <option>{{ option.name }}</option>
-    </select>
-  </div>
+  <select
+    disabled
+    class="col-lg-1 col-md-2 col-sm-2"
+    v-for="(option, idx) in options"
+    :key="idx"
+  >
+    <option>{{ option.name }}</option>
+  </select>
 </template>
 
 <style scoped>
-.row {
-  margin-top: 8px;
-}
 .col-1 {
-  margin-right: 16px;
+  /* margin-right: 16px; */
 }
 select {
-  width: 120px;
+  /* width: 120px; */
   padding: 4px 8px;
   border-radius: 4px;
   background-color: #fff;
