@@ -27,16 +27,16 @@ defineProps({
 const remainingStars = (n) => 5 - n;
 const getType = (icon) =>
   icon.indexOf("cafe") > -1
-    ? "cafe"
+    ? "Cafe"
     : icon.indexOf("generic") > -1
-    ? "generic business"
+    ? "Business"
     : icon.indexOf("movie") > -1
-    ? "movies"
+    ? "Movies"
     : icon.indexOf("bar") > -1
-    ? "bar"
+    ? "Bar"
     : icon.indexOf("lodging") > -1
-    ? "lodging"
-    : "restaurant";
+    ? "Hotel / Lodging"
+    : "Restaurant";
 </script>
 
 <template>
